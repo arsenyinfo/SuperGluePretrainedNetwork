@@ -51,6 +51,7 @@ setup(
     python_requires=REQUIRES_PYTHON,
     url=URL,
     packages=find_packages(exclude=("tests",)),
+    package_data={'superglue': ['weights/*.pth']},
     install_requires=load_requirements("requirements.txt"),
     include_package_data=True,
     classifiers=[
