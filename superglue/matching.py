@@ -51,7 +51,7 @@ class Matching(torch.nn.Module):
     def __init__(self, config={}):
         super().__init__()
         self.superpoint = SuperPoint(config.get('superpoint', {}))
-        self.superglue = SuperGlue(config.get('superglue', {}))
+        self.superglue = SuperGlue(config.get('superglue', {})).train(False)
 
     def forward(self, data):
         """ Run SuperPoint (optionally) and SuperGlue
